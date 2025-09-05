@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+import LogoPng from "../assets/tricat-logo.png";
+
+const getAClasses = (sectionName: string) =>
+  "header__a" +
+  (Astro.props.activeSection === sectionName ? " header__a--active" : "");
+---
+
+<header class="header">
+  <div class="header__container">
+    <Image class="logo" src={LogoPng} alt={"logo Tricat"} />
+    <nav class="header__nav">
+      <ul class="header__ul">
+        <li class="header__li">
+          <a class={getAClasses("home")} href="/">Strona główna</a>
+        </li>
+        <li class="header__li">
+          <a class="header__a" href="/o-nas">O nas</a>
+        </li>
+        <li class="header__li">
+          <a
+            class={getAClasses("offer") + " header__a--has-sublist"}
+            href="/oferta">Oferta <span class="header__arrow">⌄</span></a
+          >
+          <ul class="header__sublist">
+            <li class="header__subli">
+              <a
+                class={getAClasses("communication")}
+                href="/oferta-tricat/komunikacja">Komunikacja</a
+              >
+            </li>
+            <li class="header__subli">
+              <a class={getAClasses("estate")} href="/oferta-tricat/majątek"
+                >Majątek</a
+              >
+            </li>
+            <li class="header__subli">
+              <a class={getAClasses("businesses")} href="/oferta-tricat/firmy"
+                >Firmy</a
+              >
+            </li>
+            <li class="header__subli">
+              <a
+                class={getAClasses("group-insurance")}
+                href="/oferta-tricat/ubezpieczenia-grupowe"
+                >Ubezpieczenia grupowe</a
+              >
+            </li>
+            <li class="header__subli">
+              <a class="header__a" href="/oferta-tricat/turystyka">Turystyka</a>
+            </li>
+            <li class="header__subli">
+              <a class="header__a" href="/oferta-tricat/ubezpieczenia-na-zycie"
+                >Ubezpieczenia na życie</a
+              >
+            </li>
+            <li class="header__subli">
+              <a class="header__a" href="/oferta-tricat/ubezpieczenia-zdrowotne"
+                >Ubezpieczenia zdrowotne</a
+              >
+            </li>
+            <li class="header__subli">
+              <a class="header__a" href="/oferta-tricat/przedszkola-szkoly"
+                >Przedszkola/szkoły</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="header__li">
+          <a class={getAClasses("downloads")} href="/do-pobrania">Do pobrania</a
+          >
+        </li>
+        <li class="header__li">
+          <a class={getAClasses("contact")} href="/kontakt">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header__container {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 0;
+  }
+
+  .logo {
+    max-width: 12rem;
+    height: 100%;
+  }
+
+  .header__ul {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+  }
+
+  .header__li {
+    list-style-type: none;
+    position: relative;
+  }
+
+  .header__a {
+    color: var(--text-light-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: filter 0.1s ease-in-out;
+  }
+
+  .header__a:hover {
+    filter: brightness(0.65);
+  }
+
+  .header__a--active {
+    color: var(--color-active);
+    font-weight: 600;
+  }
+
+  .header__a--has-sublist:hover + .header__sublist {
+    opacity: 1;
+  }
+
+  .header__sublist {
+    position: absolute;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--background);
+    display: none;
+  }
+
+  /* .header__sublist:hover {
+    opacity: 1;
+  } */
+
+  .header__sublist--active {
+    display: block;
+    opacity: 1;
+  }
+
+  .header__subli {
+    list-style-type: none;
+  }
+
+  .header__a {
+    padding: 1em;
+    white-space: nowrap;
+    display: flex;
+    text-decoration: none;
+    align-items: flex-end;
+  }
+
+  .header__arrow {
+    display: inline-block;
+    transform: scale(1.7) translate(0.2rem, -0.3rem);
+  }
+</style>
+
+<script>
+  const $aWithSublist = document.querySelector(
+    ".header__a--has-sublist"
+  ) as HTMLAnchorElement;
+  const $sublist = document.querySelector(
+    ".header__sublist"
+  ) as HTMLUListElement;
+
+  let isMouseOverSublist = false;
+  let isMouseOverA = false;
+
+  $sublist.addEventListener("mouseenter", () => {
+    isMouseOverSublist = true;
+  });
+
+  $sublist.addEventListener("mouseleave", () => {
+    isMouseOverSublist = false;
+    setTimeout(() => {
+      if (isMouseOverSublist || isMouseOverA) return;
+      $sublist.classList.remove("header__sublist--active");
+    }, 100);
+  });
+
+  $aWithSublist.addEventListener("mouseenter", () => {
+    isMouseOverA = true;
+    $sublist.classList.add("header__sublist--active");
+  });
+
+  $aWithSublist.addEventListener("mouseleave", () => {
+    isMouseOverA = false;
+    setTimeout(() => {
+      if (isMouseOverSublist || isMouseOverA) return;
+      $sublist.classList.remove("header__sublist--active");
+    }, 100);
+  });
+</script>
