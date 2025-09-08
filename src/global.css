@@ -12,3 +12,12 @@ body {
   color: var(--text-color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-active);
+  text-underline-offset: 0.3em;
+  margin-bottom: 0.8em;
+}
