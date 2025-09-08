@@ -4,6 +4,7 @@
   --text-color: #424242;
   --color-active: #00aeef;
   --max-width: 1200px;
+  --border-radius: 2px;
 }
 
 body {

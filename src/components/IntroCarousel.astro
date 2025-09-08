@@ -1,0 +1,180 @@
+---
+import { Image } from "astro:assets";
+import Slider1Img from "../assets/slider/Slider-1.jpg";
+import Slider2Img from "../assets/slider/Slider-2.jpg";
+import Slider3Img from "../assets/slider/Slider-3.jpg";
+---
+
+<script>
+  const contents = document.querySelectorAll(".intro-carousel__content");
+
+  let offset = 0;
+  let direction = "right";
+
+  setInterval(() => {
+    if (offset === contents.length - 1) {
+      direction = "left";
+    } else if (offset === 0) {
+      direction = "right";
+    }
+
+    if (direction === "right") {
+      offset++;
+    } else {
+      offset--;
+    }
+
+    contents.forEach((content) => {
+      content.style.transform = `translateX(-${offset * 100}%)`;
+    });
+
+    const dots = document.querySelectorAll(".intro-carousel__progess-dot");
+    dots.forEach((dot, index) => {
+      if (index === offset) {
+        dot.classList.add("intro-carousel__progess-dot--active");
+      } else {
+        dot.classList.remove("intro-carousel__progess-dot--active");
+      }
+    });
+  }, 3000);
+</script>
+
+<section class="intro-carousel">
+  <div class="intro-carousel__content">
+    <div class="intro-carousel__text">
+      <h2>Zabezpieczamy twoją firmę</h2>
+      <a href="/oferta">Zobacz więcej →</a>
+    </div>
+    <Image
+      class="intro-carousel__image"
+      src={Slider1Img}
+      alt="Zabezpieczamy twoją firmę"
+    />
+  </div>
+  <div class="intro-carousel__content">
+    <div class="intro-carousel__text">
+      <h2>Ubezpieczenia na życie i zdrowie</h2>
+      <a href="/oferta">Zobacz więcej →</a>
+    </div>
+    <Image
+      class="intro-carousel__image"
+      src={Slider2Img}
+      alt="Ubezpieczenia na życie i zdrowie"
+    />
+  </div>
+  <div class="intro-carousel__content">
+    <div class="intro-carousel__text">
+      <h2>Chronimy ciebie i twój majątek</h2>
+      <a href="/oferta">Zobacz więcej →</a>
+    </div>
+    <Image
+      class="intro-carousel__image"
+      src={Slider3Img}
+      alt="Chronimy ciebie i twój majątek"
+    />
+  </div>
+  <div class="intro-carousel__progess">
+    <div class="intro-carousel__progess-dot"></div>
+    <div class="intro-carousel__progess-dot"></div>
+    <div class="intro-carousel__progess-dot"></div>
+  </div>
+</section>
+
+x<style>
+  .intro-carousel {
+    width: 300%;
+    max-width: var(--max-width);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    margin: auto;
+    position: relative;
+    height: min-content;
+  }
+
+  .intro-carousel__content {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1.25fr 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    transition: left 0.5s ease-in-out;
+    height: min-content;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .intro-carousel__content * {
+    grid-column: 1/2;
+  }
+
+  .intro-carousel__text {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  .intro-carousel__content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    align-self: end;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.3em 0.7em;
+    border-radius: var(--border-radius);
+  }
+
+  .intro-carousel__content a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-active);
+    height: min-content;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: filter 0.3s ease-in-out;
+    border-radius: var(--border-radius);
+    margin-top: 0.2em;
+    width: max-content;
+    margin: 1.5em auto;
+  }
+
+  .intro-carousel__content a:hover {
+    filter: brightness(0.9);
+  }
+
+  .intro-carousel__image {
+    grid-row: 1/3;
+    height: max-content;
+    height: 35rem;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+    filter: brightness(0.9);
+  }
+
+  .intro-carousel__progess {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .intro-carousel__progess-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .intro-carousel__progess-dot--active {
+    background-color: white;
+  }
+</style>
