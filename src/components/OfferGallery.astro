@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import FirmyJpg from "../assets/images/firmy.jpg";
+import KomunikacjaJpg from "../assets/images/komunikacja.jpg";
+import MajatekJpg from "../assets/images/majatek.jpg";
+import UbezpieczeniaGrupoweJpg from "../assets/images/ubezpieczenia-grupowe.jpg";
+import TurystykaJpg from "../assets/images/turystyka.jpg";
+import UbezpieczeniaNaZycieJpg from "../assets/images/ubezpieczenia-na-zycie.jpg";
+import UbezpieczeniaZdrowotneJpg from "../assets/images/ubezpieczenia-zdrowotne.jpg";
+import PrzedszkolaSzkolyJpg from "../assets/images/przedszkola-szkoly.jpg";
+
+const depolishify = (str: string) =>
+  str
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/ó/g, "o")
+    .replace(/ł/g, "l")
+    .replace(/ę/g, "e")
+    .replace(/ś/g, "s")
+    .replace(/ć/g, "c")
+    .replace(/ż/g, "z")
+    .replace(/ź/g, "z")
+    .replace(/ń/g, "n");
+---
+
+<article class="offer-gallery">
+  <ul class="offer-gallery__list">
+    {
+      [
+        { name: "Komunikacja", img: KomunikacjaJpg },
+        { name: "Majątek", img: MajatekJpg },
+        { name: "Firmy", img: FirmyJpg },
+        { name: "Ubezpieczenia grupowe", img: UbezpieczeniaGrupoweJpg },
+        { name: "Turystyka", img: TurystykaJpg },
+        { name: "Ubezpieczenia na życie", img: UbezpieczeniaNaZycieJpg },
+        { name: "Ubezpieczenia zdrowotne", img: UbezpieczeniaZdrowotneJpg },
+        { name: "Przedszkola/szkoły", img: PrzedszkolaSzkolyJpg },
+      ].map((offer) => (
+        <li class="offer-gallery__item">
+          <a
+            class="offer-gallery__link"
+            href={`/oferta-tricat/${depolishify(offer.name)}`}
+          >
+            <div class="offer-gallery__img-container">
+              <Image
+                class="offer-gallery__img"
+                src={offer.img}
+                alt={offer.name}
+              />
+            </div>
+            <span class="offer-gallery__text">{offer.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</article>
+
+<style>
+  .offer-gallery {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .offer-gallery__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.3em 0.7em;
+  }
+
+  .offer-gallery__item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+  }
+
+  .offer-gallery__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .offer-gallery__img-container {
+    overflow: hidden;
+  }
+
+  .offer-gallery__img {
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .offer-gallery__item:hover .offer-gallery__img {
+    transform: scale(1.04);
+  }
+
+  .offer-gallery__text {
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.15rem;
+  }
+</style>
