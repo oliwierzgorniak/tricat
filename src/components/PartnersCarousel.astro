@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import AllianzPng from "../assets/brands/allianz.png";
+import AvivaPng from "../assets/brands/aviva.png";
+import CompensaPng from "../assets/brands/compensa.png";
+import GeneraliPng from "../assets/brands/generali.png";
+import GothaerPng from "../assets/brands/gothaer.png";
+import HdiPng from "../assets/brands/hdi.png";
+import HestiaPng from "../assets/brands/hestia.png";
+import InterriskPng from "../assets/brands/interrisk.png";
+import LibertyPng from "../assets/brands/liberty.png";
+import ProamaPng from "../assets/brands/proama.png";
+import PzuPng from "../assets/brands/pzu.png";
+import TuwPng from "../assets/brands/tuw.png";
+import UniqaPng from "../assets/brands/uniqa.png";
+import WartaPng from "../assets/brands/warta.png";
+import WienerPng from "../assets/brands/wiener.png";
+
+const partnersImgs = [
+  WienerPng,
+  WartaPng,
+  PzuPng,
+  HestiaPng,
+  InterriskPng,
+  HdiPng,
+  CompensaPng,
+  GeneraliPng,
+  GothaerPng,
+  AvivaPng,
+  ProamaPng,
+  LibertyPng,
+  UniqaPng,
+  AllianzPng,
+];
+---
+
+<script>
+  // const contents = document.querySelectorAll(".partners-carousel__content");
+
+  // let offset = 0;
+  // let direction = "right";
+
+  // setInterval(() => {
+  //   if (offset === contents.length - 1) {
+  //     direction = "left";
+  //   } else if (offset === 0) {
+  //     direction = "right";
+  //   }
+
+  //   if (direction === "right") {
+  //     offset++;
+  //   } else {
+  //     offset--;
+  //   }
+
+  //   contents.forEach((content) => {
+  //     content.style.transform = `translateX(-${offset * 100}%)`;
+  //   });
+  // }, 3000);
+</script>
+
+<section class="partners-carousel">
+  <ul class="partners-carousel__list">
+    {
+      partnersImgs.map((img) => (
+        <li class="partners-carousel__li">
+          <Image
+            class="partners-carousel__img"
+            src={img}
+            alt={img.src.split("/").pop().split(".")[0]}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .partners-carousel {
+    overflow: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4em 0;
+  }
+
+  .partners-carousel__list {
+    width: max-content;
+    max-width: var(--max-width);
+    padding: 0;
+    display: flex;
+    gap: 4em;
+    animation: scroll 15s alternate linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-97%);
+    }
+  }
+
+  .partners-carousel__li {
+    list-style-type: none;
+    filter: grayscale(1);
+    opacity: 0.4;
+  }
+
+  .partners-carousel__img {
+    width: max-content;
+    max-width: unset;
+    height: 3.6rem;
+  }
+</style>
