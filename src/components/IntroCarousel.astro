@@ -80,14 +80,14 @@ import Slider3Img from "../assets/slider/Slider-3.jpg";
   </div>
 </section>
 
-x<style>
+<style>
   .intro-carousel {
     width: 300%;
     max-width: var(--max-width);
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(3, 100%);
-    margin: auto;
+    margin: 1em auto 0 auto;
     position: relative;
     height: min-content;
   }
@@ -101,9 +101,8 @@ x<style>
     text-align: center;
     color: white;
     padding: 1rem;
-    transition: left 0.5s ease-in-out;
     height: min-content;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.7s ease-in-out;
   }
 
   .intro-carousel__content * {
@@ -172,7 +171,6 @@ x<style>
     height: 12px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
-    cursor: pointer;
     transition: background-color 0.3s ease-in-out;
   }
 
