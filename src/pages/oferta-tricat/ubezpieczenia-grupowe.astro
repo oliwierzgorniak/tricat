@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import UbezpieczeniaGrupoweJpg from "../../assets/images/ubezpieczenia-grupowe.jpg";
+---
+
+<Layout title="Grupowe">
+  <Header activeSection="offer" />
+  <OfferSection
+    img={UbezpieczeniaGrupoweJpg}
+    imgAlt="Grupa pracowników przy biurku"
+  >
+    <div class="offer-section__text-container">
+      <h2>Ubezpieczenia grupowe</h2>
+      <ul>
+        <li>Ubezpieczenia na życie</li>
+        <li>OC za produkt, należyte wykonanie usługi, OC najemcy</li>
+        <li>Ubezpieczenia następstw nieszczęśliwych wypadków i inne</li>
+      </ul>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

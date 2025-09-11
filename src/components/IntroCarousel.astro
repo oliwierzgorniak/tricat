@@ -81,15 +81,19 @@ import Slider3Img from "../assets/slider/Slider-3.jpg";
 </section>
 
 <style>
+  body {
+    display: initial;
+  }
+
   .intro-carousel {
-    width: 300%;
     max-width: var(--max-width);
-    overflow: hidden;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: repeat(3, 100%);
-    margin: 1em auto 0 auto;
+    margin: 1em auto 3em auto;
     position: relative;
-    height: min-content;
+    width: 300%;
+    transition: transform 0.7s ease-in-out;
   }
 
   .intro-carousel__content {
@@ -101,7 +105,6 @@ import Slider3Img from "../assets/slider/Slider-3.jpg";
     text-align: center;
     color: white;
     padding: 1rem;
-    height: min-content;
     transition: transform 0.7s ease-in-out;
   }
 
@@ -151,7 +154,6 @@ import Slider3Img from "../assets/slider/Slider-3.jpg";
     height: 35rem;
     width: 100%;
     object-fit: cover;
-    overflow: hidden;
     z-index: -1;
     filter: brightness(0.9);
   }

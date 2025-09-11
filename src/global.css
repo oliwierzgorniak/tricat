@@ -11,6 +11,10 @@ body {
   background: var(--background);
   color: var(--text-color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -20,4 +24,5 @@ h2 {
   text-decoration-color: var(--color-active);
   text-underline-offset: 0.3em;
   margin-bottom: 0.8em;
+  line-height: 0.9;
 }

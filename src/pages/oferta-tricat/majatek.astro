@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import MajatekJpg from "../../assets/images/majatek.jpg";
+---
+
+<Layout title="Majątkowe">
+  <Header activeSection="offer" />
+  <OfferSection img={MajatekJpg} imgAlt="Mężczyzna z domem">
+    <div class="offer-section__text-container">
+      <h2>Majątkowe</h2>
+      <ul>
+        <li>
+          Ubezpieczenia domów, mieszkań, firm i inwestycji budowlanych itp.
+        </li>
+        <li>
+          Wiele wariantów nowoczesnych ubezpieczeń od zdarzeń losowych,
+          kradzieży z włamaniem i rabunku, dewastacji
+        </li>
+        <li>
+          Ubezpieczenia ruchomości domowych, w tym elektroniki, zbiorów
+          kolekcjonerskich, dzieł sztuki, itd.
+        </li>
+        <li>
+          Ubezpieczenia budynków, maszyn i urządzeń, mienia ruchomego, środków
+          obrotowych od zdarzeń losowych, kradzieży, wandalizmu
+        </li>
+        <li>
+          Wiele ubezpieczeń specjalnych: za podwykonawców, utraty zysku, ryzyka
+          budowlane, ubezpieczenia sprzętu elektronicznego od utraty danych i
+          inne
+        </li>
+      </ul>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

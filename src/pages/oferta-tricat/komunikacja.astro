@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import KomunikacjaJpg from "../../assets/images/komunikacja.jpg";
+---
+
+<Layout title="Komunikacja">
+  <Header activeSection="offer" />
+  <OfferSection img={KomunikacjaJpg} imgAlt="Auto na tle samolotu">
+    <div class="offer-section__text-container">
+      <h2>Komunikacja</h2>
+      <ul>
+        <li>
+          Ubezpieczenia odpowiedzialności cywilnej posiadaczy pojazdów
+          mechanicznych (OC)
+        </li>
+        <li>Ubezpieczenia autocasco (AC)</li>
+        <li>
+          Ubezpieczenia pomocy w przypadku kolizji lub awarii (assistance)
+        </li>
+        <li>Ubezpieczenia następstw nie szczęśliwych wypadków (NNW)</li>
+        <li>
+          Inne pakietowe ubezpieczenia komunikacyjne np.szyby, ochrony zniżek
+          itp.
+        </li>
+      </ul>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

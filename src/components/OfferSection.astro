@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+---
+
+<article class="offer-section">
+  <Image
+    class="offer-section__image"
+    src={Astro.props.img}
+    alt={Astro.props.imgAlt}
+  />
+  <div>
+    <slot />
+    <a class="offer-section__button" href="mailto:biuro@tricat.pl"
+      >Wyślij wiadomość&nbsp;&nbsp;✉️</a
+    >
+  </div>
+</article>
+
+<style is:global>
+  .offer-section {
+    display: flex;
+    margin: 3em auto 4.5em auto;
+    max-width: var(--max-width);
+    width: max-content;
+    gap: 2em;
+    flex: 1;
+  }
+
+  .offer-section__image {
+    max-width: 30rem;
+    height: min-content;
+  }
+
+  .offer-section__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55em;
+  }
+
+  .offer-section h2 {
+    margin-bottom: 0.6em;
+  }
+  .offer-section p {
+    line-height: 1.5;
+    margin-bottom: 0.65em;
+    max-width: 32rem;
+  }
+
+  .offer-section ul {
+    max-width: 32rem;
+    padding-left: 1.1em;
+  }
+
+  .offer-section li {
+    margin-bottom: 0.65em;
+  }
+
+  .offer-section__button {
+    margin-top: 1.45em;
+    display: inline-block;
+    color: white;
+    font-size: 0.85rem;
+    background-color: var(--color-active);
+    padding: 0.6em 0.7em;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: filter 0.3s ease-in-out;
+    height: min-content;
+    margin-left: 0.1em;
+    width: max-content;
+  }
+
+  .offer-section__button:hover {
+    filter: brightness(0.9);
+  }
+</style>

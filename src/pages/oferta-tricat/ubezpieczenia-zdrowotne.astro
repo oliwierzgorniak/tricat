@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import UbezpieczeniaZdrowotneJpg from "../../assets/images/ubezpieczenia-zdrowotne.jpg";
+---
+
+<Layout title="Zdrowotne">
+  <Header activeSection="offer" />
+  <OfferSection img={UbezpieczeniaZdrowotneJpg} imgAlt="Lekarka">
+    <div class="offer-section__text-container">
+      <h2>Ubezpieczenia zdrowotne</h2>
+      <ul>
+        <li>Prywatne pakiety medyczne</li>
+        <li>Opieka wielu specjalistów</li>
+        <li>Prywatne badania diagnostyczne</li>
+        <li>Chirurgia jednego dnia</li>
+      </ul>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

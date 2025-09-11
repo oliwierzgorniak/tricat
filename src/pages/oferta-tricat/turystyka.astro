@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import TurystykaJpg from "../../assets/images/turystyka.jpg";
+---
+
+<Layout title="Turystyka">
+  <Header activeSection="offer" />
+  <OfferSection img={TurystykaJpg} imgAlt="Rodzina na plaży">
+    <div class="offer-section__text-container">
+      <h2>Ubezpieczenia turystyczne</h2>
+      <p>
+        Ubezpieczenia turystyczne kosztów leczenia za granicą i powrotu w razie
+        choroby do Polski, sprzętu sportowego, bagażu, ubezpieczenia związane z
+        uprawianiem sportów wysokiego ryzyka i inne
+      </p>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import FirmyJpg from "../../assets/images/firmy.jpg";
+---
+
+<Layout title="Firmy">
+  <Header activeSection="offer" />
+  <OfferSection img={FirmyJpg} imgAlt="Pracownicy budowalni">
+    <div class="offer-section__text-container">
+      <h2>Firmy</h2>
+      <p>
+        Oferujemy doradztwo ubezpieczeniowe dla firm produkcyjnych, handlowych,
+        czy usługowych, stowarzyszeń, klubów i instytucji. Pomagamy w wyborze
+        najbardziej odpowiedniego ubezpieczenia w zależności od wielkości
+        przedsiębiorstwa, prowadzonej działalności i skali działania.
+      </p>
+      <ul>
+        <li>
+          OC dla podmiotów gospodarczych z tytułu prowadzenia działalności i
+          posiadanego mienia
+        </li>
+        <li>OC za produkt, należyte wykonanie usługi, OC najemcy</li>
+        <li>
+          Ubezpieczenia ruchomości domowych, w tym elektroniki, zbiorów
+          kolekcjonerskich, dzieł sztuki, itd.
+        </li>
+        <li>OC członków zarządu</li>
+      </ul>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>

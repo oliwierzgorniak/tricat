@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import OfferSection from "../../components/OfferSection.astro";
+
+import PrzedszkolaSzkolyJpg from "../../assets/images/przedszkola-szkoly.jpg";
+---
+
+<Layout title="Przedszkola i szkoly">
+  <Header activeSection="offer" />
+  <OfferSection img={PrzedszkolaSzkolyJpg} imgAlt="Nauczycielka z dziećmi">
+    <div class="offer-section__text-container">
+      <h2>Przedszkola i szkoły</h2>
+      <p>
+        Zapraszamy do współpracy przedszkola, szkoły, zarówno państwowe, jak i
+        prywatne. Dostosujemy ofertę ubezpieczenia do indywidualnych potrzeb
+        placówki oświatowej.
+      </p>
+    </div>
+  </OfferSection>
+  <Footer />
+</Layout>
