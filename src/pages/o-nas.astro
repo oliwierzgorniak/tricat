@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header activeSection="home" />
+  <section class="about">
+    <h2>O nas</h2>
+    <p class="about__paragraph--first">
+      Multiagencja Ubezpieczeniowa TRICAT zajmuje się obsługą ubezpieczeniową
+      <strong>klientów indywidualnych</strong> oraz <strong
+        >firm i instytucji</strong
+      >. Siedziba agencji znajduje się w <strong>Krakowie-Sidzinie</strong> przy
+      ul. Prażmowskiego 12, ale działamy na terenie Małopolski, <strong
+        >dojeżdżając indywidualnie do klientów</strong
+      >. Współpracujemy z <strong
+        >największymi towarzystwami ubezpieczeniowymi</strong
+      >, takimi jak: WARTA, PZU, HESTIA, INTERRISK, HDI, COMPENSA, GENERALI,
+      GOTHAER, AVIVA, PROAMA, LIBERTY UBEZPIECZENIA, UNIQA, TUZ, ALLIANZ i inne.
+    </p>
+    <p>
+      Współpracujemy także z Małopolską Siecią Multiagencji Ubezpieczeniowych
+      <strong>Gomar Małgorzaty Witwickiej</strong>, posiadającą szeroką ofertę
+      towarzystw ubezpieczeniowych, centrum rozliczeń i doradztwa
+      ubezpieczeniowego oraz kancelarią brokerską. Firma nasza jest <strong
+        >solidnym partnerem biznesowym</strong
+      >, zarówno dla małych, jak i większych podmiotów gospodarczych,
+      stowarzyszeń i klientów indywidualnych na terenie Małopolski.
+    </p>
+  </section>
+</Layout>
+<Footer />
+
+<style>
+  .about {
+    text-align: center;
+    margin: 2em auto 4em auto;
+    max-width: 42rem;
+  }
+
+  .about p {
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  .about strong {
+    font-weight: 600;
+  }
+
+  .about__paragraph--first {
+    margin-bottom: 1em;
+  }
+
+  .about a {
+    font-size: 0.9;
+    margin-top: 3em;
+    display: inline-block;
+    margin-top: 1.5em;
+    color: white;
+    background-color: var(--color-active);
+    padding: 0.4em 0.8em;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .about a:hover {
+    filter: brightness(0.9);
+  }
+
+  .footer {
+    background-color: #dedede;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    padding: 3em;
+  }
+
+  .footer__item {
+    list-style-type: "- ";
+    color: #a6a6a6;
+  }
+
+  .footer__link {
+    color: inherit;
+    font-size: 0.8rem;
+    color: #7f7f7f;
+  }
+</style>

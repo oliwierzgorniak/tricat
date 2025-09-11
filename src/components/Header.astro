@@ -130,8 +130,10 @@ const getAClasses = (sectionName: string) =>
     padding: 0;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    background-color: var(--background);
+    background-color: rgb(249, 249, 249);
     display: none;
+    z-index: 20;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
   }
 
   .header__sublist--active {

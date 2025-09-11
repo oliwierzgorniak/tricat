@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import IntroCarousel from "../components/IntroCarousel.astro";
 import OfferGallery from "../components/OfferGallery.astro";
 import PartnersCarousel from "../components/PartnersCarousel.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -20,73 +21,10 @@ import PartnersCarousel from "../components/PartnersCarousel.astro";
       HESTIA, INTERRISK, HDI, COMPENSA, GENERALI, GOTHAER, AVIVA, PROAMA,
       LIBERTY UBEZPIECZENIA, UNIQA, TUZ, ALLIANZ i inne.
     </p>
-    <a href="/o-nas">Zobacz więcej →</a>
   </section>
   <OfferGallery />
   <PartnersCarousel />
-  <footer class="footer">
-    <ul class="footer__list">
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/komunikacja">Komunikacja</a
-        >
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/majatek">Majątek</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/firmy">Firmy</a>
-      </li>
-    </ul>
-    <ul class="footer__list">
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/ubezpieczenia-grupowe"
-          >Ubezpieczenia grupowe</a
-        >
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/turystyka">Turystyka</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/ubezpieczenia-na-zycie"
-          >Ubezpieczenia na życie</a
-        >
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/ubezpieczenia-zdrowotne"
-          >Ubezpieczenia zdrowotne</a
-        >
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/oferta-tricat/przedszkola-szkoly"
-          >Przedszkola / szkoły</a
-        >
-      </li>
-    </ul>
-    <ul class="footer__list">
-      <li class="footer__item">
-        <a class="footer__link" href="/o-nas">O nas</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/do-pobrania">Do pobrania</a>
-      </li>
-      <li class="footer__item">
-        <a class="footer__link" href="/kontakt">Kontakt</a>
-      </li>
-    </ul>
-    <ul class="footer__list">
-      <li class="footer__item">
-        <a class="footer__link" href="mailto:biuro@tricat.pl">biuro@tricat.pl</a
-        >
-      </li>
-      <li class="footer__item">
-        <a
-          class="footer__link"
-          target="_blank"
-          href="https://wynajemosuszacza.com">wynajemosuszacza.com</a
-        >
-      </li>
-    </ul>
-  </footer>
+  <Footer />
 </Layout>
 
 <style>
@@ -115,24 +53,5 @@ import PartnersCarousel from "../components/PartnersCarousel.astro";
 
   .about a:hover {
     filter: brightness(0.9);
-  }
-
-  .footer {
-    background-color: #dedede;
-    display: flex;
-    justify-content: center;
-    gap: 3em;
-    padding: 3em;
-  }
-
-  .footer__item {
-    list-style-type: "- ";
-    color: #666666;
-  }
-
-  .footer__link {
-    color: inherit;
-    font-size: 0.8rem;
-    color: #666666;
   }
 </style>
