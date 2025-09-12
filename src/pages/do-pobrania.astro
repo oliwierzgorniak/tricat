@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header activeSection="home" />
+  <article class="downloads">
+    <h2 class="downloads__title">O nas</h2>
+    <ul class="downloads__list">
+      <li class="downloads__item">
+        <a
+          class="downloads__link"
+          href="/pliki/upowaznienie_o_wydanie_zaswiadczenia_i_przygotowanie_floty.doc"
+          download
+          >🚛 <span class="downloads__link-text"
+            >Upoważnienie o wydanie zaświadczenia i przygotowanie floty</span
+          > ↓</a
+        >
+      </li>
+      <li class="downloads__item">
+        <a
+          class="downloads__link"
+          href="/pliki/oswiadczenie_sprawcy_wypadku_tricat.doc"
+          download
+          >💥 <span class="downloads__link-text"
+            >Oświadczenie sprawcy kolizji</span
+          > ↓</a
+        >
+      </li>
+      <li class="downloads__item">
+        <a
+          class="downloads__link"
+          href="/pliki/wniosek_o_zwrot_skladki.docx"
+          download
+          >🤝 <span class="downloads__link-text">Wniosek o zwrot składki</span> ↓</a
+        >
+      </li>
+      <li class="downloads__item">
+        <a
+          class="downloads__link"
+          href="/pliki/oswiadczenie_sprawcy_wypadku_tricat.doc"
+          download
+          >💶 <span class="downloads__link-text">Wniosek o zwrot składki</span> ↓</a
+        >
+      </li>
+      <li class="downloads__item">
+        <a class="downloads__link" href="/pliki/wypowiedzenie_oc.doc" download
+          >❌ <span class="downloads__link-text">Wypowiedzenie OC</span> ↓</a
+        >
+      </li>
+    </ul>
+  </article>
+  <Footer />
+</Layout>
+
+<style>
+  .downloads {
+    margin: 4em auto;
+    max-width: 18.5rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  .downloads__title {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .downloads__list {
+    padding: 0;
+  }
+
+  .downloads__item {
+    list-style: none;
+    margin-bottom: 0.7em;
+  }
+
+  .downloads__link {
+    font-size: 0.9;
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    line-height: 1.7;
+  }
+
+  .downloads__link:hover {
+    color: rgb(124, 124, 124);
+  }
+
+  .downloads__link-text {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.28em;
+    text-decoration-color: rgb(178, 178, 178);
+  }
+</style>
