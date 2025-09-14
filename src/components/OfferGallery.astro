@@ -23,44 +23,49 @@ const depolishify = (str: string) =>
     .replace(/ń/g, "n");
 ---
 
-<article class="offer-gallery">
-  <ul class="offer-gallery__list">
-    {
-      [
-        { name: "Komunikacja", img: KomunikacjaJpg },
-        { name: "Majątek", img: MajatekJpg },
-        { name: "Firmy", img: FirmyJpg },
-        { name: "Ubezpieczenia grupowe", img: UbezpieczeniaGrupoweJpg },
-        { name: "Turystyka", img: TurystykaJpg },
-        { name: "Ubezpieczenia na życie", img: UbezpieczeniaNaZycieJpg },
-        { name: "Ubezpieczenia zdrowotne", img: UbezpieczeniaZdrowotneJpg },
-        { name: "Przedszkola/szkoły", img: PrzedszkolaSzkolyJpg },
-      ].map((offer) => (
-        <li class="offer-gallery__item">
-          <a
-            class="offer-gallery__link"
-            href={`/oferta-tricat/${depolishify(offer.name)}`}
-          >
-            <div class="offer-gallery__img-container">
-              <Image
-                class="offer-gallery__img"
-                src={offer.img}
-                alt={offer.name}
-              />
-            </div>
-            <span class="offer-gallery__text">{offer.name}</span>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</article>
+<main>
+  <article class="offer-gallery">
+    <ul class="offer-gallery__list">
+      {
+        [
+          { name: "Komunikacja", img: KomunikacjaJpg },
+          { name: "Majątek", img: MajatekJpg },
+          { name: "Firmy", img: FirmyJpg },
+          { name: "Ubezpieczenia grupowe", img: UbezpieczeniaGrupoweJpg },
+          { name: "Turystyka", img: TurystykaJpg },
+          { name: "Ubezpieczenia na życie", img: UbezpieczeniaNaZycieJpg },
+          { name: "Ubezpieczenia zdrowotne", img: UbezpieczeniaZdrowotneJpg },
+          { name: "Przedszkola/szkoły", img: PrzedszkolaSzkolyJpg },
+        ].map((offer) => (
+          <li class="offer-gallery__item">
+            <a
+              class="offer-gallery__link"
+              href={`/oferta-tricat/${depolishify(offer.name)}`}
+            >
+              <div class="offer-gallery__img-container">
+                <Image
+                  class="offer-gallery__img"
+                  src={offer.img}
+                  alt={offer.name}
+                />
+              </div>
+              <span class="offer-gallery__text">{offer.name}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</main>
 
 <style>
+  main {
+    flex: 1;
+  }
+
   .offer-gallery {
     max-width: var(--max-width);
     margin: 0 auto;
-    margin-top: 5em;
   }
 
   .offer-gallery__list {

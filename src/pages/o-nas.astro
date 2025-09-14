@@ -6,34 +6,41 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
   <Header activeSection="home" />
-  <section class="about">
-    <h2>O nas</h2>
-    <p class="about__paragraph--first">
-      Multiagencja Ubezpieczeniowa TRICAT zajmuje się obsługą ubezpieczeniową
-      <strong>klientów indywidualnych</strong> oraz <strong
-        >firm i instytucji</strong
-      >. Siedziba agencji znajduje się w <strong>Krakowie-Sidzinie</strong> przy
-      ul. Prażmowskiego 12, ale działamy na terenie Małopolski, <strong
-        >dojeżdżając indywidualnie do klientów</strong
-      >. Współpracujemy z <strong
-        >największymi towarzystwami ubezpieczeniowymi</strong
-      >, takimi jak: WARTA, PZU, HESTIA, INTERRISK, HDI, COMPENSA, GENERALI,
-      GOTHAER, AVIVA, PROAMA, LIBERTY UBEZPIECZENIA, UNIQA, TUZ, ALLIANZ i inne.
-    </p>
-    <p>
-      Współpracujemy także z Małopolską Siecią Multiagencji Ubezpieczeniowych
-      <strong>Gomar Małgorzaty Witwickiej</strong>, posiadającą szeroką ofertę
-      towarzystw ubezpieczeniowych, centrum rozliczeń i doradztwa
-      ubezpieczeniowego oraz kancelarią brokerską. Firma nasza jest <strong
-        >solidnym partnerem biznesowym</strong
-      >, zarówno dla małych, jak i większych podmiotów gospodarczych,
-      stowarzyszeń i klientów indywidualnych na terenie Małopolski.
-    </p>
-  </section>
+  <main>
+    <section class="about">
+      <h2>O nas</h2>
+      <p class="about__paragraph--first">
+        Multiagencja Ubezpieczeniowa TRICAT zajmuje się obsługą ubezpieczeniową
+        <strong>klientów indywidualnych</strong> oraz <strong
+          >firm i instytucji</strong
+        >. Siedziba agencji znajduje się w <strong>Krakowie-Sidzinie</strong> przy
+        ul. Prażmowskiego 12, ale działamy na terenie Małopolski, <strong
+          >dojeżdżając indywidualnie do klientów</strong
+        >. Współpracujemy z <strong
+          >największymi towarzystwami ubezpieczeniowymi</strong
+        >, takimi jak: WARTA, PZU, HESTIA, INTERRISK, HDI, COMPENSA, GENERALI,
+        GOTHAER, AVIVA, PROAMA, LIBERTY UBEZPIECZENIA, UNIQA, TUZ, ALLIANZ i
+        inne.
+      </p>
+      <p>
+        Współpracujemy także z Małopolską Siecią Multiagencji Ubezpieczeniowych
+        <strong>Gomar Małgorzaty Witwickiej</strong>, posiadającą szeroką ofertę
+        towarzystw ubezpieczeniowych, centrum rozliczeń i doradztwa
+        ubezpieczeniowego oraz kancelarią brokerską. Firma nasza jest <strong
+          >solidnym partnerem biznesowym</strong
+        >, zarówno dla małych, jak i większych podmiotów gospodarczych,
+        stowarzyszeń i klientów indywidualnych na terenie Małopolski.
+      </p>
+    </section>
+  </main>
 </Layout>
 <Footer />
 
 <style>
+  main {
+    flex: 1;
+  }
+
   .about {
     text-align: center;
     margin: 2em auto 3.8em auto;

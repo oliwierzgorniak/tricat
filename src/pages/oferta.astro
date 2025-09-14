@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import OfferGallery from "../components/OfferGallery.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header activeSection="home" />
+  <main>
+    <h2>Nasza oferta</h2>
+    <OfferGallery />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    flex: 1;
+    margin-top: 3.5em;
+    margin-bottom: 7em;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.6em;
+  }
+</style>
